@@ -9,36 +9,4 @@ import { ProductService } from '../services/api/products/product.service';
   templateUrl: './about.component.html',
   styleUrls: ['./about.component.scss'],
 })
-export class AboutComponent implements OnInit {
-  param: any;
-  queryParam: any;
-
-  constructor(private service: ProductService) {}
-
-  ngOnInit(): void {
-    // this.service.getAllProductsWithLimit().subscribe({
-    //   next: (data) => {
-    //     console.log(data);
-    //   },
-    // });
-
-    const product: ProductRepresentation = {
-      title: 'new product',
-      description: 'product desc',
-      price: 10,
-      category: 'any cat',
-      image: 'https://theImage.jpg',
-    };
-    this.service.createProduct(product).subscribe({
-      next: (data) => {
-        console.log(data);
-      },
-      error: (error: HttpErrorResponse) => {
-        // server side error
-        console.error(
-          `server returned status code ${error.status}, error message: ${error.message}`
-        );
-      },
-    });
-  }
-}
+export class AboutComponent {}
