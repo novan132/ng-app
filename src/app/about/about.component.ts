@@ -1,3 +1,4 @@
+import { HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { ProductRepresentation } from '../services/api/models/product-representation';
@@ -15,11 +16,11 @@ export class AboutComponent implements OnInit {
   constructor(private service: ProductService) {}
 
   ngOnInit(): void {
-    this.service.getAllProductsWithLimit().subscribe({
-      next: (data) => {
-        console.log(data);
-      },
-    });
+    // this.service.getAllProductsWithLimit().subscribe({
+    //   next: (data) => {
+    //     console.log(data);
+    //   },
+    // });
 
     const product: ProductRepresentation = {
       title: 'new product',
@@ -31,6 +32,12 @@ export class AboutComponent implements OnInit {
     this.service.createProduct(product).subscribe({
       next: (data) => {
         console.log(data);
+      },
+      error: (error: HttpErrorResponse) => {
+        // server side error
+        console.error(
+          `server returned status code ${error.status}, error message: ${error.message}`
+        );
       },
     });
   }
