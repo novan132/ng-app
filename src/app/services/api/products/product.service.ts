@@ -14,4 +14,9 @@ export class ProductService {
     const productsUrl: string = `${this.baseUrl}products?limit=${limit}`;
     return this.http.get<Array<ProductRepresentation>>(productsUrl);
   }
+
+  createProduct(product: ProductRepresentation) {
+    const productsUrl: string = `${this.baseUrl}products`;
+    return this.http.post<ProductRepresentation>(productsUrl, product);
+  }
 }
