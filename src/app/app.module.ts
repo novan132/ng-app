@@ -7,9 +7,10 @@ import { AppComponent } from './app.component';
 import { FirstCompComponent } from './first-comp/first-comp.component';
 import { MessageDetailsComponent } from './message-details/message-details.component';
 import { FirstServService } from './services/first-serv.service';
+import { MenuComponent } from './menu/menu.component';
 
 @NgModule({
-  declarations: [AppComponent, FirstCompComponent, MessageDetailsComponent],
+  declarations: [AppComponent, FirstCompComponent, MessageDetailsComponent, MenuComponent],
   imports: [BrowserModule, AppRoutingModule, FormsModule],
   providers: [FirstServService],
   bootstrap: [AppComponent],
