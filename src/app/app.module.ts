@@ -10,6 +10,7 @@ import { FirstServService } from './services/first-serv.service';
 import { MenuComponent } from './menu/menu.component';
 import { AboutComponent } from './about/about.component';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { ProductsComponent } from './products/products.component';
 
 @NgModule({
   declarations: [
@@ -18,6 +19,7 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
     MessageDetailsComponent,
     MenuComponent,
     AboutComponent,
+    ProductsComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule],
   providers: [FirstServService, HttpClient],
