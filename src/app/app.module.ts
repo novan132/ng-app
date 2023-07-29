@@ -9,11 +9,18 @@ import { MessageDetailsComponent } from './message-details/message-details.compo
 import { FirstServService } from './services/first-serv.service';
 import { MenuComponent } from './menu/menu.component';
 import { AboutComponent } from './about/about.component';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 
 @NgModule({
-  declarations: [AppComponent, FirstCompComponent, MessageDetailsComponent, MenuComponent, AboutComponent],
-  imports: [BrowserModule, AppRoutingModule, FormsModule],
-  providers: [FirstServService],
+  declarations: [
+    AppComponent,
+    FirstCompComponent,
+    MessageDetailsComponent,
+    MenuComponent,
+    AboutComponent,
+  ],
+  imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule],
+  providers: [FirstServService, HttpClient],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
